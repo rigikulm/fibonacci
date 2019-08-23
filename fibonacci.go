@@ -12,13 +12,13 @@ func fibonacci() func() int {
 	var index int
 
 	return func() int {
-		v, ok := fib[index]
+		_, ok := fib[index]
 		if !ok {
 			fib[index] = fib[index-1] + fib[index-2]
 		}
-		v = fib[index]
+		//v = fib[index]
 		index++
-		return v
+		return fib[index-1]
 	}
 }
 
