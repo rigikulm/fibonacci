@@ -9,7 +9,7 @@ import "fmt"
 // It uses closure to track the next fibonacci number in the sequence.
 func fibonacci() func() int {
 	var fib = map[int]int{0: 0, 1: 1, 2: 1}
-	var index int = 0
+	var index int
 
 	return func() int {
 		v, ok := fib[index]
